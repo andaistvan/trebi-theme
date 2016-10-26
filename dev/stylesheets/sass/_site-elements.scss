@@ -2,7 +2,7 @@
 // globals
 // ---------------------------------------
 body{
-   background: #D8D8D8;
+   background: #EAEDF2;
 }
 
 .bg-white{
@@ -15,11 +15,12 @@ body{
 
 .fullwidth{
    width: 100%;
+   max-width: 1600px;
 }
 
 .main-container{
    width: 100%;
-   max-width: 960px;
+   max-width: 1100px;
    display: table;
    margin: 0 auto;
    padding: 0 20px;
@@ -48,7 +49,13 @@ body{
 // header
 // ---------------------------------------
 
+header#masthead{
+   background: #323944;
+}
+
 #header-top{
+   background: #323944;
+
    padding-top: 20px;
    .site-branding{
    }
@@ -80,9 +87,10 @@ body{
 // footer
 // ---------------------------------------
 footer#colophon.site-footer{
+   background: #323944;
    height: 150px;
    .main-container{
-      background:black;
+      // background:black;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -93,6 +101,26 @@ footer#colophon.site-footer{
             color: white;
             line-height: 1.25em;
          }
+      }
+   }
+}
+
+
+// ---------------------------------------
+// index.php
+// ---------------------------------------
+section#pages{
+   .main-container{
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      padding: 30px 0;
+      article{
+         width: 70%;
+         margin: 0 15px 0 0;
+      }
+      .sidebar-cont{
+         width: 30%;
       }
    }
 }

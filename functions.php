@@ -182,12 +182,12 @@ require get_template_directory().'/inc/woocommerce.php';
 /**
  * Load woocommerce cutosm product fields.
  */
-require get_template_directory().'/inc/wc-costomprodfields.php';
+// require get_template_directory().'/inc/wc-costomprodfields.php';
 
 /**
  * custom taxonomies.
  */
-require get_template_directory().'/inc/taxonomie-teszt.php';
+// require get_template_directory().'/inc/taxonomie-teszt.php';
 
 /**
  * Load foundation6 menu walkers.

@@ -89,3 +89,7 @@ function my_custom_quantity_field()
 // {
 //     echo '<style>.woocommerce-message {display: none !important;}</style>';
 // }
+
+/*
+   fields factory column on woocommerce admin
+*/

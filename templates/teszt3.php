@@ -10,7 +10,7 @@ if (!defined('ABSPATH')) {
 get_header('shop'); ?>
 <section id="teszt3" class="fullwidth">
 
-   <div class="main-container bg-white">
+   <div class="main-container">
 
 
          <?php

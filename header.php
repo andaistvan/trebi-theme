@@ -35,7 +35,7 @@
 <div id="page" class="site">
 
 	<header id="masthead" class="full" role="banner">
-      <div class="main-container bg-white">
+      <div class="main-container">
          <div id="header-top" class="flex--row-sbw guide">
 
             <div class="site-branding guide">
@@ -54,7 +54,6 @@
                </div><!-- header-contact -->
 
                <div id="header-banner" class="guide">
-                  <a href="+36 20 46 99 550">+36 20 46 99 550</a>
                </div><!-- header-banner -->
             </div><!-- header-info -->
 

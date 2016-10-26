@@ -10,9 +10,11 @@ nav#site-navigation.main-navigation{
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      background: darkgray;
-      max-width: 960px;
+      // background: darkgray;
+      background: #323944;
+      max-width: 1100px;
       margin: auto;
+      border-top: 1px solid $link-color;
       li{
          a{
             color: white;
@@ -21,12 +23,12 @@ nav#site-navigation.main-navigation{
       }
       li:hover{
          a{
-            color: $foundblue;
+            color: $link-color;
          }
       }
       li.current-menu-item{
          a{
-            color: $graydark;
+            color: $link-color;
          }
       }
    }
