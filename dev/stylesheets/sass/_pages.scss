@@ -1,0 +1,25 @@
+// teszt
+ul.accordion#proba-accordion{
+   width: 60%;
+   li{
+      a{
+         h6{
+            padding-right: 100px;
+         }
+      }
+   }
+}
+
+
+// custom filter
+#custom-filter{
+   background: #rgb(228, 237, 245);
+   border: 1px dashed red;
+   padding: 20px;
+   width: 100%;
+   ul{
+      li.product-loop{
+         border: 1px solid blue;
+      }
+   }
+}

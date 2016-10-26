@@ -1,0 +1,22 @@
+// woocommerce cart
+
+section#widget_shopping_mini_cart-2{
+}
+
+// woocommerce product widget
+section#woocommerce_products-3{
+   ul.product_list_widget{
+      li{
+         display: flex;
+         flex-direction: row;
+         justify-content: flex-start;
+         align-items: center;
+         .title-box{
+            max-width: 60%;
+         }
+         a.button.product_type_simple.add_to_cart_button.ajax_add_to_cart{
+            display: inline-block;
+         }
+      }
+   }
+}
