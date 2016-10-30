@@ -1,6 +1,23 @@
 // ---------------------------------------
 // globals
 // ---------------------------------------
+
+#temp-widget-cont{
+   position: fixed;
+   right: 0px;
+   top: 150px;
+   z-index: 100;
+   background: white;
+   border: 1px solid $bones-pink;
+   opacity: 0.8;
+   padding: 10px;
+   max-width: 230px;
+   border-radius: 5px 0  0 5px;
+   box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.19);
+   border-right: none;
+}
+
+
 body{
    background: #EAEDF2;
 }

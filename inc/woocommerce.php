@@ -93,3 +93,87 @@ function my_custom_quantity_field()
 /*
    fields factory column on woocommerce admin
 */
+//Add custom column into Product Page
+add_filter('manage_edit-product_columns', 'my_columns_into_product_list');
+function my_columns_into_product_list($defaults)
+{
+    $defaults['wccaf_shippingdate'] = 'Rendelési nap';
+
+    return $defaults;
+}
+
+//Add rows value into Product Page
+add_action('manage_product_posts_custom_column', 'my_custom_column_into_product_list', 10, 2);
+function my_custom_column_into_product_list($column, $post_id)
+{
+    switch ($column) {
+    case 'wccaf_shippingdate':
+        echo get_post_meta($post_id, 'wccaf_shippingdate', true);
+    break;
+    }
+}
+
+// sorting column content
+add_filter('manage_edit-product_sortable_columns', 'sortable_columns');
+
+// Make these columns sortable
+function sortable_columns()
+{
+    return array(
+                'wccaf_shippingdate' => 'wccaf_shippingdate',
+            );
+}
+
+add_action('pre_get_posts', 'event_column_orderby');
+function event_column_orderby($query)
+{
+    if (!is_admin()) {
+        return;
+    }
+    $orderby = $query->get('orderby');
+    if ('wccaf_shippingdate' == $orderby) {
+        $query->set('meta_key', 'wccaf_shippingdate');
+        $query->set('orderby', 'meta_value');
+    }
+}
+
+// remove product admin content editor
+add_action('init', 'remove_content_editor');
+
+function remove_content_editor()
+{
+    remove_post_type_support('product', 'editor');
+}
+
+// napok fordítása
+// add_action('hu_days', 'change_day_name');
+// function hu_days()
+// {
+//     $day = date('l');
+//     switch ($day) {
+//       case 'Monday':    $day = 'Hétfő';  break;
+//       case 'Tuesday':   $day = 'Kedd'; break;
+//       case 'Wednesday': $day = 'Szerda';  break;
+//       case 'Thursday':  $day = 'Csötörtök'; break;
+//       case 'Friday':    $day = 'Péntek';  break;
+//       case 'Saturday':  $day = 'Szombat';  break;
+//       case 'Sunday':    $day = 'Vasárnap';  break;
+//       default:          $day = 'Unknown'; break;
+//    }
+// }
+
+// unset factory sorting
+
+// Customizes the WooCommerce product sorting options
+// Available options are: menu_order, rating, date, popularity, price, price-desc
+function custom_woocommerce_product_sorting($orderby)
+{
+    // The following removes the rating, date, and the popularity sorting options;
+  // feel free to customize and enable/disable the options as needed.
+  unset($orderby['rating']);
+    unset($orderby['date']);
+    unset($orderby['popularity']);
+
+    return $orderby;
+}
+add_filter('woocommerce_catalog_orderby', 'custom_woocommerce_product_sorting', 20);
