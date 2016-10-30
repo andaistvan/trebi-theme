@@ -99,8 +99,6 @@ array(
 // bottom block -->
 <div class="order-panel">
 <!-- // info toggler -->
-<?php get_template_part('template-parts/info-toggler');
-         ?>
 <!-- // cart & quaintity -->
 <?php get_template_part('template-parts/cart-quantity');
          ?>
@@ -139,8 +137,6 @@ wp_reset_postdata();
 // bottom block -->
 <div class="order-panel">
 <!-- // info toggler -->
-<?php get_template_part('template-parts/info-toggler');
-         ?>
 <!-- // cart & quaintity -->
 <?php get_template_part('template-parts/cart-quantity');
          ?>
@@ -179,8 +175,6 @@ wp_reset_postdata();
 // bottom block -->
 <div class="order-panel">
 <!-- // info toggler -->
-<?php get_template_part('template-parts/info-toggler');
-         ?>
 <!-- // cart & quaintity -->
 <?php get_template_part('template-parts/cart-quantity');
          ?>

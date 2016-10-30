@@ -16,7 +16,6 @@ get_header('shop'); ?>
 
    <div class="main-container">
 
-
 <!-- next week -->
       <div class="week-menu-cont">
          <h2 class="week-datas">

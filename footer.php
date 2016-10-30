@@ -25,6 +25,26 @@
 $(document).foundation();
 </script>
 
+<!-- quantity button formázás -->
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+$(".product_quantity_minus").click(function(e){
+   var quantityInput = $(this).closest(".quantity").children("input");
+   var currentQuantity = parseInt($(quantityInput).val());
+   var newQuantity = ( currentQuantity > 1 ) ?  ( currentQuantity - 1) : 1;
+   $(quantityInput).val(newQuantity);
+});
+
+$(".product_quantity_plus").click(function(e){
+   var max_quantity = 99999;
+   var quantityInput = $(this).closest(".quantity").children("input");
+   var currentQuantity = parseInt($(quantityInput).val());
+   var newQuantity = ( currentQuantity >= max_quantity ) ?  max_quantity : ( currentQuantity+1 );
+   $(quantityInput).val(newQuantity);
+});
+});
+</script>
+
 
 
 </body>

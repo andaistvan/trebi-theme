@@ -5,9 +5,11 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  */;
 ?>
+
 <div class="cart-contbox">
-   <p>
-      quantity&cart
-   </p>
+   <?php
+   get_template_part('template-parts/info-toggler');
+
+   do_action('custom_addtocart', 'woocommerce_template_loop_add_to_cart');   ?>
 
 </div><!-- cart-contbox -->

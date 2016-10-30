@@ -96,24 +96,6 @@ li#metabox-cont{
 
 
 
-
-form.cart{
-   display: flex;
-   flex-direction: row;
-   div.quantity{
-      width: 50px;
-      display: inline-block;
-      input.input-text.qty.text{
-         width: 50px;
-         margin: 0px;
-      }
-   }
-   button.button.alt{
-      margin: 0px;
-   }
-}
-
-
 .sidebar-cont{
    width: 30%;
    // background-color: white;
@@ -183,10 +165,10 @@ section#teszt3{
             align-items: space-between;
             li.product{
                padding: 10px;
-               width: 175px;
+               width: 190px;
                min-height: 220px;
-               // border-left: 1px solid $black;
-               // border-right: 1px solid $black;
+               border-left: 1px solid $border-color;
+               border-right: 1px solid $border-color;
                border-bottom: 1px solid $black;
                flex-shrink: 0;
                flex-grow: 1;
@@ -195,7 +177,7 @@ section#teszt3{
                align-items: space-between;
                justify-content: space-between;
                .food-name{
-                  border: 1px dashed lightgreen;
+                  // border: 1px dashed lightgreen;
                   flex-shrink: 0;
                   flex-grow: 1;
                   flex-basis: 1;
@@ -232,28 +214,140 @@ section#teszt3{
 // cart & quantity
 .order-panel{
    position: relative;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
    .cart-contbox{
-      display: inline-block;
-      height: 30px;
-      border: 1px dashed $bones-pink;
+      flex-grow: 1;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      // border: 1px dashed $bones-pink;
       p{
          display: inline-block;
+      }
+      a.added_to_cart.wc-forward{
+         display: none;
+      }
+      .quantity{
+         display: flex;
+         flex-direction: row;
+         justify-content: center;
+         align-items: center;
       }
    }
 }
 
+// cart text
+
+div.cart-contbox{
+   form.cart{
+      // background: $black;
+      // border: 1px solid $border-color;
+      box-shadow: 0 0 5px $border-color;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: row;
+
+      .quantity{
+         margin-left: 4px;
+         input.input-text.qty.text{
+         }
+      }
+      button.button.alt{
+         font-family: 'FontAwesome';
+         background: none;
+         // border: 1px solid $bones-pink;
+         padding: 0 0 0 0;
+         color: $black;
+         margin: 0 4px 0 2px;
+         &:hover{
+            color: $bones-pink;
+         }
+         &:before{
+            font-family: 'FontAwesome';
+            content: '\f217';
+            position: relative;
+            font-size: 30px;
+         }
+      }
+   }
+}
+
+
+// custom quantity button
+
+.quantity .product_quantity_minus,
+.quantity .product_quantity_plus {
+   width: 25px;
+   height: 25px;
+   padding-left: 7px;
+   display: inline-block;
+   color: white;
+   background: $bones-pink;
+   border-radius: 3px;
+   font-size: 22px;
+   cursor: pointer;
+   line-height: 1em;
+   position: relative;
+}
+
+.woocommerce .quantity .qty {
+   display: none;
+   height: 17px;
+
+}
+
+input.input-text.qty.text{
+   color: black;
+   font-weight: bold;
+   text-align: center;
+   display: inline-block;
+   width: 35px;
+   height: 25px;
+   margin: 0;
+   padding: 0;
+}
+
+.woocommerce .quantity .qty {
+	display: inline-block;
+	height: 17px;
+   width: 20px;
+	vertical-align: top;
+}
+
+// remove qunatity arrows
+/* Disable input[type=number] buttons until the world is ready */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    display:none;
+}
+
+
+
+
 // info-toggler-cont
 .info-toggler-cont{
    display: inline-block;
+   box-shadow: 0 0 5px $border-color;
+   border-radius: 5px;
+   height: 32px;
+   padding: 2px 4px 0px 4px;
    a{
       .info-toggler-button{
-         background: $bones-pink;
-         padding: 5px 15px;
-         border-radius: 3px;
+         // background: $border-color;
+         // padding: 0px 10px;
+         padding: 0px;
+         margin: 0px;
+         // margin-top: 1px;
          p{
-            font-size: 12px;
-            font-weight: bold;
-            line-height: 1.25em;
+            height: 25px;
+            font-size: 19px;
+            font-weight: 900;
+            line-height: 1em;
             color: white;
             margin: 0;
             padding: 0;
@@ -274,4 +368,10 @@ section#teszt3{
          font-size: 12px;
       }
    }
+}
+
+i.fa.fa-info-circle{
+   color: $black;
+   font-size: 26px;
+   vertical-align: middle;
 }
